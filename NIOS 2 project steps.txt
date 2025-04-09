@@ -1,0 +1,43 @@
+QUARTUS (to create the Component)
+1. open Platform Designer
+2. add all hardwares
+3. System -> Assign base address
+3. Generate HDL...
+4. name <>.qsys file and Save
+5. let it run
+6. click Finish
+7. run (double-click) Analysis & Synthesis (to fix component not appearing)
+8. import the built Component (<>.bsf) to schematic
+
+QUARTUS (to edit the component)
+1. Open Platform Designer
+2. Open <>.qsys
+
+QUARTUS (to build circuit)
+1. Build Schematic
+2. Analysis & Synthesis (If get error do below)
+	2.1. Project -> Add/Remove Files -> Add all -> Apply
+	2.2. Step 2 again
+3. Assignments -> Pin Planner (If got error do below?)
+ 	3.5. click Project -> Set as Top Level Entity
+4. Compile all (Green Run Button) (If get error do below)
+	4.1. Assignments -> Device -> Device & Pin Options -> Configs
+		-> Config mode -> Single Uncomp Imag w Mem Init (512Kbits UFM)
+	4.2. Unused Pins -> As Input tri-stated -> OK
+	4.3. Step 5
+5. Programmer -> Add File... -> select <>.sof -> Start (always delete & add)
+6. Tools -> NIOS II
+
+ECLIPSE
+1. File -> New -> Nios II Application and BSP from Template
+2. find <>.sopc (Blank Project) -> Project name -> Finish
+3. right click first -> New -> File -> Prog.s
+4. Code
+5. Build All (CTRL B)
+6. Run -> Run Configurations..
+
+ECLIPSE (to edit a prev projects)
+1. Delete prev both projects (if exist)
+2. (rest of Eclips codes)
+
+
