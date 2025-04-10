@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="altera.nios2.mingw.gcc4.419836489">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="altera.nios2.mingw.gcc4.419836489" moduleId="org.eclipse.cdt.core.settings" name="Default">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration buildProperties="" id="altera.nios2.mingw.gcc4.419836489" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
+					<folderInfo id="altera.nios2.mingw.gcc4.419836489.1693855144" name="/" resourcePath="">
+						<toolChain id="altera.nios2.mingw.gcc4.142253414" name="MinGW Nios II GCC4" superClass="altera.nios2.mingw.gcc4">
+							<targetPlatform id="altera.nios2.mingw.gcc4.660942494" name="Nios II" superClass="altera.nios2.mingw.gcc4"/>
+							<builder id="altera.tool.gnu.builder.mingw.1845167428" managedBuildOn="false" name="Gnu Make Builder.Default" superClass="altera.tool.gnu.builder.mingw"/>
+							<tool id="altera.tool.gnu.c.compiler.mingw.281703898" name="Nios II GCC C Compiler" superClass="altera.tool.gnu.c.compiler.mingw"/>
+							<tool id="altera.tool.gnu.cpp.compiler.mingw.583381396" name="Nios II GCC C++ Compiler" superClass="altera.tool.gnu.cpp.compiler.mingw"/>
+							<tool id="altera.tool.gnu.archiver.mingw.1746184380" name="Nios II GCC Archiver" superClass="altera.tool.gnu.archiver.mingw"/>
+							<tool id="altera.tool.gnu.c.linker.mingw.1511465619" name="Nios II GCC C Linker" superClass="altera.tool.gnu.c.linker.mingw"/>
+							<tool id="altera.tool.gnu.assembler.mingw.679508714" name="Nios II GCC Assembler" superClass="altera.tool.gnu.assembler.mingw"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="Lab4_eclipse.null.689511829" name="Lab4_eclipse"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+</cproject>
