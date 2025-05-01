@@ -1,0 +1,517 @@
+Archive member included to satisfy reference by file (symbol)
+
+../UART_NEW_bsp/\libhal_bsp.a(alt_load.o)
+                              ../UART_NEW_bsp//obj/HAL/src/crt0.o (alt_load)
+../UART_NEW_bsp/\libhal_bsp.a(alt_main.o)
+                              ../UART_NEW_bsp//obj/HAL/src/crt0.o (alt_main)
+../UART_NEW_bsp/\libhal_bsp.a(alt_putstr.o)
+                              obj/default/exception.o (alt_putstr)
+../UART_NEW_bsp/\libhal_bsp.a(alt_sys_init.o)
+                              ../UART_NEW_bsp/\libhal_bsp.a(alt_main.o) (alt_irq_init)
+../UART_NEW_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                              ../UART_NEW_bsp/\libhal_bsp.a(alt_putstr.o) (altera_avalon_jtag_uart_write)
+../UART_NEW_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+                              ../UART_NEW_bsp/\libhal_bsp.a(alt_load.o) (alt_dcache_flush_all)
+../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+                              ../UART_NEW_bsp/\libhal_bsp.a(alt_load.o) (alt_icache_flush_all)
+../UART_NEW_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+                              ../UART_NEW_bsp/\libhal_bsp.a(alt_sys_init.o) (altera_nios2_gen2_irq_init)
+../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush.o)
+                              ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush_all.o) (alt_icache_flush)
+c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+                              ../UART_NEW_bsp/\libhal_bsp.a(alt_putstr.o) (strlen)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+reset            0x0000000000000000 0x0000000000000020
+new_sdram_controller_0 0x0000000000000020 0x0000000003ffffe0
+onchip_memory2_0 0x0000000004004000 0x0000000000004000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD ../UART_NEW_bsp//obj/HAL/src/crt0.o
+LOAD obj/default/exception.o
+LOAD obj/default/hello_world_small.o
+LOAD c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libstdc++.a
+LOAD c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libm.a
+LOAD c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a
+START GROUP
+LOAD c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a
+LOAD c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a
+LOAD ../UART_NEW_bsp/\libhal_bsp.a
+LOAD c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libm.a
+END GROUP
+LOAD c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a
+                0x0000000000000000                __alt_mem_new_sdram_controller_0 = 0x0
+                0x0000000004004000                __alt_mem_onchip_memory2_0 = 0x4004000
+
+.entry          0x0000000000000000       0x20
+ *(.entry)
+ .entry         0x0000000000000000       0x20 ../UART_NEW_bsp//obj/HAL/src/crt0.o
+                0x0000000000000000                __reset
+                0x000000000000001c                _exit
+
+.exceptions     0x0000000000000020      0x114
+                0x0000000000000020                PROVIDE (__ram_exceptions_start, ABSOLUTE (.))
+                0x0000000000000020                . = ALIGN (0x20)
+ *(.irq)
+ *(.exceptions.entry.label)
+ *(.exceptions.entry.user)
+ *(.exceptions.entry.ecc_fatal)
+ *(.exceptions.entry)
+ *(.exceptions.irqtest.user)
+ *(.exceptions.irqtest)
+ *(.exceptions.irqhandler.user)
+ *(.exceptions.irqhandler)
+ *(.exceptions.irqreturn.user)
+ *(.exceptions.irqreturn)
+ *(.exceptions.notirq.label)
+ *(.exceptions.notirq.user)
+ *(.exceptions.notirq)
+ *(.exceptions.soft.user)
+ *(.exceptions.soft)
+ *(.exceptions.unknown.user)
+ *(.exceptions.unknown)
+ *(.exceptions.exit.label)
+ *(.exceptions.exit.user)
+ *(.exceptions.exit)
+ *(.exceptions)
+ .exceptions    0x0000000000000020      0x114 obj/default/exception.o
+                0x0000000000000020                the_exception
+                0x0000000000000134                PROVIDE (__ram_exceptions_end, ABSOLUTE (.))
+                0x0000000000000020                PROVIDE (__flash_exceptions_start, LOADADDR (.exceptions))
+
+.text           0x0000000000000134      0x368
+                [!provide]                        PROVIDE (stext, ABSOLUTE (.))
+ *(.interp)
+ *(.hash)
+ *(.dynsym)
+ *(.dynstr)
+ *(.gnu.version)
+ *(.gnu.version_d)
+ *(.gnu.version_r)
+ *(.rel.init)
+ *(.rela.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rel.fini)
+ *(.rela.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rela.ctors)
+ *(.rel.dtors)
+ *(.rela.dtors)
+ *(.rel.got)
+ *(.rela.got)
+ *(.rel.sdata .rel.sdata.* .rel.gnu.linkonce.s.*)
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+ *(.rel.sbss .rel.sbss.* .rel.gnu.linkonce.sb.*)
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+ *(.rel.sdata2 .rel.sdata2.* .rel.gnu.linkonce.s2.*)
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+ *(.rel.sbss2 .rel.sbss2.* .rel.gnu.linkonce.sb2.*)
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+ *(.rel.plt)
+ *(.rela.plt)
+ *(.rel.dyn)
+ *(.init)
+ *(.plt)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000000000134       0x4c ../UART_NEW_bsp//obj/HAL/src/crt0.o
+                0x0000000000000134                _start
+ .text          0x0000000000000180       0x8c obj/default/exception.o
+                0x0000000000000180                interrupt_handler
+ .text          0x000000000000020c        0x0 obj/default/hello_world_small.o
+ .text.startup  0x000000000000020c       0x74 obj/default/hello_world_small.o
+                0x000000000000020c                main
+ .text          0x0000000000000280       0xe0 ../UART_NEW_bsp/\libhal_bsp.a(alt_load.o)
+                0x0000000000000280                alt_load
+ .text          0x0000000000000360       0x2c ../UART_NEW_bsp/\libhal_bsp.a(alt_main.o)
+                0x0000000000000360                alt_main
+ .text          0x000000000000038c       0x38 ../UART_NEW_bsp/\libhal_bsp.a(alt_putstr.o)
+                0x000000000000038c                alt_putstr
+ .text          0x00000000000003c4       0x24 ../UART_NEW_bsp/\libhal_bsp.a(alt_sys_init.o)
+                0x00000000000003c4                alt_irq_init
+                0x00000000000003e4                alt_sys_init
+ .text          0x00000000000003e8       0x34 ../UART_NEW_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                0x00000000000003e8                altera_avalon_jtag_uart_write
+ .text          0x000000000000041c       0x18 ../UART_NEW_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+                0x000000000000041c                alt_dcache_flush_all
+ .text          0x0000000000000434        0xc ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+                0x0000000000000434                alt_icache_flush_all
+ .text          0x0000000000000440        0x8 ../UART_NEW_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+                0x0000000000000440                altera_nios2_gen2_irq_init
+ .text          0x0000000000000448       0x38 ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush.o)
+                0x0000000000000448                alt_icache_flush
+ .text          0x0000000000000480        0x0 c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+ .text.strlen   0x0000000000000480       0x1c c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+                0x0000000000000480                strlen
+ *(.gnu.warning.*)
+ *(.fini)
+                [!provide]                        PROVIDE (__etext, ABSOLUTE (.))
+                [!provide]                        PROVIDE (_etext, ABSOLUTE (.))
+                [!provide]                        PROVIDE (etext, ABSOLUTE (.))
+ *(.eh_frame_hdr)
+                0x000000000000049c                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__preinit_array_start, ABSOLUTE (.))
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end, ABSOLUTE (.))
+                [!provide]                        PROVIDE (__init_array_start, ABSOLUTE (.))
+ *(.init_array)
+                [!provide]                        PROVIDE (__init_array_end, ABSOLUTE (.))
+                [!provide]                        PROVIDE (__fini_array_start, ABSOLUTE (.))
+ *(.fini_array)
+                [!provide]                        PROVIDE (__fini_array_end, ABSOLUTE (.))
+ *(.eh_frame)
+ *(.gcc_except_table .gcc_except_table.*)
+ *(.dynamic)
+                [!provide]                        PROVIDE (__CTOR_LIST__, ABSOLUTE (.))
+ *(.ctors)
+ *(SORT(.ctors.*))
+                [!provide]                        PROVIDE (__CTOR_END__, ABSOLUTE (.))
+                [!provide]                        PROVIDE (__DTOR_LIST__, ABSOLUTE (.))
+ *(.dtors)
+ *(SORT(.dtors.*))
+                [!provide]                        PROVIDE (__DTOR_END__, ABSOLUTE (.))
+ *(.jcr)
+                0x000000000000049c                . = ALIGN (0x4)
+
+.reset          0x000000000000049c       0x10
+ .reset         0x000000000000049c       0x10 obj/default/exception.o
+                0x000000000000049c                the_reset
+
+.rodata         0x00000000000004ac        0x4
+                0x00000000000004ac                PROVIDE (__ram_rodata_start, ABSOLUTE (.))
+                0x00000000000004ac                . = ALIGN (0x4)
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.str1.4
+                0x00000000000004ac        0x4 obj/default/exception.o
+                                          0x2 (size before relaxing)
+ *(.rodata1)
+                0x00000000000004b0                . = ALIGN (0x4)
+                0x00000000000004b0                PROVIDE (__ram_rodata_end, ABSOLUTE (.))
+                0x00000000000004ac                PROVIDE (__flash_rodata_start, LOADADDR (.rodata))
+
+.rwdata         0x00000000000004b0       0x30 load address 0x00000000000004e0
+                0x00000000000004b0                PROVIDE (__ram_rwdata_start, ABSOLUTE (.))
+                0x00000000000004b0                . = ALIGN (0x4)
+ *(.got.plt)
+ *(.got)
+ *(.data1)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x00000000000004b0        0x0 ../UART_NEW_bsp//obj/HAL/src/crt0.o
+ .data          0x00000000000004b0        0x0 obj/default/exception.o
+ .data          0x00000000000004b0        0x0 obj/default/hello_world_small.o
+ .data          0x00000000000004b0        0x0 ../UART_NEW_bsp/\libhal_bsp.a(alt_load.o)
+ .data          0x00000000000004b0        0x0 ../UART_NEW_bsp/\libhal_bsp.a(alt_main.o)
+ .data          0x00000000000004b0        0x0 ../UART_NEW_bsp/\libhal_bsp.a(alt_putstr.o)
+ .data          0x00000000000004b0        0x0 ../UART_NEW_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .data          0x00000000000004b0        0x0 ../UART_NEW_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .data          0x00000000000004b0        0x0 ../UART_NEW_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .data          0x00000000000004b0        0x0 ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .data          0x00000000000004b0        0x0 ../UART_NEW_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .data          0x00000000000004b0        0x0 ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .data          0x00000000000004b0        0x0 c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+                0x00000000000084b0                _gp = ABSOLUTE ((. + 0x8000))
+                [!provide]                        PROVIDE (gp, _gp)
+ *(.rwdata .rwdata.*)
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata         0x00000000000004b0       0x28 obj/default/hello_world_small.o
+                0x00000000000004b0                Input_MSB_EDGECAPTURE
+                0x00000000000004b4                Input_MSB_IRQ
+                0x00000000000004b8                Input_MSB
+                0x00000000000004bc                HEX0
+                0x00000000000004c0                Output_LED8
+                0x00000000000004c4                Output_LEDR
+                0x00000000000004c8                Input_Key1
+                0x00000000000004cc                UART_TX
+                0x00000000000004d0                uart_ctrl
+                0x00000000000004d4                UART
+ .sdata         0x00000000000004d8        0x8 ../UART_NEW_bsp/\libhal_bsp.a(alt_sys_init.o)
+                0x00000000000004d8                uart_0
+                0x00000000000004dc                jtag_uart_0
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+                0x00000000000004e0                . = ALIGN (0x4)
+                0x00000000000004e0                _edata = ABSOLUTE (.)
+                [!provide]                        PROVIDE (edata, ABSOLUTE (.))
+                0x00000000000004e0                PROVIDE (__ram_rwdata_end, ABSOLUTE (.))
+                0x00000000000004e0                PROVIDE (__flash_rwdata_start, LOADADDR (.rwdata))
+
+.bss            0x0000000000000510       0x10
+                0x0000000000000510                __bss_start = ABSOLUTE (.)
+                [!provide]                        PROVIDE (__sbss_start, ABSOLUTE (.))
+                [!provide]                        PROVIDE (___sbss_start, ABSOLUTE (.))
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss          0x0000000000000510        0x4 obj/default/hello_world_small.o
+                0x0000000000000510                interrupt_counter
+ .sbss          0x0000000000000514        0xc ../UART_NEW_bsp/\libhal_bsp.a(alt_main.o)
+                0x0000000000000514                alt_envp
+                0x0000000000000518                alt_argv
+                0x000000000000051c                alt_argc
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+ *(.scommon)
+                [!provide]                        PROVIDE (__sbss_end, ABSOLUTE (.))
+                [!provide]                        PROVIDE (___sbss_end, ABSOLUTE (.))
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x0000000000000520        0x0 ../UART_NEW_bsp//obj/HAL/src/crt0.o
+ .bss           0x0000000000000520        0x0 obj/default/exception.o
+ .bss           0x0000000000000520        0x0 obj/default/hello_world_small.o
+ .bss           0x0000000000000520        0x0 ../UART_NEW_bsp/\libhal_bsp.a(alt_load.o)
+ .bss           0x0000000000000520        0x0 ../UART_NEW_bsp/\libhal_bsp.a(alt_main.o)
+ .bss           0x0000000000000520        0x0 ../UART_NEW_bsp/\libhal_bsp.a(alt_putstr.o)
+ .bss           0x0000000000000520        0x0 ../UART_NEW_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .bss           0x0000000000000520        0x0 ../UART_NEW_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .bss           0x0000000000000520        0x0 ../UART_NEW_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .bss           0x0000000000000520        0x0 ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .bss           0x0000000000000520        0x0 ../UART_NEW_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .bss           0x0000000000000520        0x0 ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .bss           0x0000000000000520        0x0 c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+ *(COMMON)
+                0x0000000000000520                . = ALIGN (0x4)
+                0x0000000000000520                __bss_end = ABSOLUTE (.)
+
+.new_sdram_controller_0
+                0x0000000000000520        0x0
+                [!provide]                        PROVIDE (_alt_partition_new_sdram_controller_0_start, ABSOLUTE (.))
+ *(.new_sdram_controller_0 .new_sdram_controller_0. new_sdram_controller_0.*)
+                0x0000000000000520                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (_alt_partition_new_sdram_controller_0_end, ABSOLUTE (.))
+                0x0000000000000520                _end = ABSOLUTE (.)
+                0x0000000000000520                end = ABSOLUTE (.)
+                0x0000000000000520                __alt_stack_base = ABSOLUTE (.)
+                [!provide]                        PROVIDE (_alt_partition_new_sdram_controller_0_load_addr, LOADADDR (.new_sdram_controller_0))
+
+.onchip_memory2_0
+                0x0000000004004000        0x0 load address 0x0000000000000520
+                [!provide]                        PROVIDE (_alt_partition_onchip_memory2_0_start, ABSOLUTE (.))
+ *(.onchip_memory2_0 .onchip_memory2_0. onchip_memory2_0.*)
+                0x0000000004004000                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (_alt_partition_onchip_memory2_0_end, ABSOLUTE (.))
+                [!provide]                        PROVIDE (_alt_partition_onchip_memory2_0_load_addr, LOADADDR (.onchip_memory2_0))
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x23
+ *(.comment)
+ .comment       0x0000000000000000       0x23 obj/default/exception.o
+                                         0x24 (size before relaxing)
+ .comment       0x0000000000000023       0x24 obj/default/hello_world_small.o
+ .comment       0x0000000000000023       0x24 ../UART_NEW_bsp/\libhal_bsp.a(alt_load.o)
+ .comment       0x0000000000000023       0x24 ../UART_NEW_bsp/\libhal_bsp.a(alt_main.o)
+ .comment       0x0000000000000023       0x24 ../UART_NEW_bsp/\libhal_bsp.a(alt_putstr.o)
+ .comment       0x0000000000000023       0x24 ../UART_NEW_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .comment       0x0000000000000023       0x24 ../UART_NEW_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .comment       0x0000000000000023       0x24 ../UART_NEW_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .comment       0x0000000000000023       0x24 ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .comment       0x0000000000000023       0x24 ../UART_NEW_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .comment       0x0000000000000023       0x24 ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .comment       0x0000000000000023       0x24 c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x1b8
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x28 ../UART_NEW_bsp//obj/HAL/src/crt0.o
+ .debug_aranges
+                0x0000000000000028       0x30 obj/default/exception.o
+ .debug_aranges
+                0x0000000000000058       0x20 obj/default/hello_world_small.o
+ .debug_aranges
+                0x0000000000000078       0x20 ../UART_NEW_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_aranges
+                0x0000000000000098       0x20 ../UART_NEW_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_aranges
+                0x00000000000000b8       0x20 ../UART_NEW_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_aranges
+                0x00000000000000d8       0x20 ../UART_NEW_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_aranges
+                0x00000000000000f8       0x20 ../UART_NEW_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_aranges
+                0x0000000000000118       0x20 ../UART_NEW_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_aranges
+                0x0000000000000138       0x20 ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_aranges
+                0x0000000000000158       0x20 ../UART_NEW_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_aranges
+                0x0000000000000178       0x20 ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .debug_aranges
+                0x0000000000000198       0x20 c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000      0xe87
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000       0x7c ../UART_NEW_bsp//obj/HAL/src/crt0.o
+ .debug_info    0x000000000000007c      0x129 obj/default/exception.o
+ .debug_info    0x00000000000001a5      0x18e obj/default/hello_world_small.o
+ .debug_info    0x0000000000000333      0x1c9 ../UART_NEW_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_info    0x00000000000004fc      0x169 ../UART_NEW_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_info    0x0000000000000665      0x13a ../UART_NEW_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_info    0x000000000000079f      0x1ba ../UART_NEW_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_info    0x0000000000000959      0x197 ../UART_NEW_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_info    0x0000000000000af0       0xa6 ../UART_NEW_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_info    0x0000000000000b96       0xb8 ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_info    0x0000000000000c4e       0x92 ../UART_NEW_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_info    0x0000000000000ce0       0xde ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .debug_info    0x0000000000000dbe       0xc9 c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+
+.debug_abbrev   0x0000000000000000      0x821
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000       0x12 ../UART_NEW_bsp//obj/HAL/src/crt0.o
+ .debug_abbrev  0x0000000000000012       0xfc obj/default/exception.o
+ .debug_abbrev  0x000000000000010e       0x79 obj/default/hello_world_small.o
+ .debug_abbrev  0x0000000000000187       0xd8 ../UART_NEW_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_abbrev  0x000000000000025f       0xee ../UART_NEW_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_abbrev  0x000000000000034d       0xd3 ../UART_NEW_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_abbrev  0x0000000000000420      0x107 ../UART_NEW_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_abbrev  0x0000000000000527       0xd5 ../UART_NEW_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_abbrev  0x00000000000005fc       0x5a ../UART_NEW_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_abbrev  0x0000000000000656       0x6f ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_abbrev  0x00000000000006c5       0x42 ../UART_NEW_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_abbrev  0x0000000000000707       0x9b ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .debug_abbrev  0x00000000000007a2       0x7f c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+
+.debug_line     0x0000000000000000      0x888
+ *(.debug_line)
+ .debug_line    0x0000000000000000       0x72 ../UART_NEW_bsp//obj/HAL/src/crt0.o
+ .debug_line    0x0000000000000072       0xbb obj/default/exception.o
+ .debug_line    0x000000000000012d       0x63 obj/default/hello_world_small.o
+ .debug_line    0x0000000000000190       0xa4 ../UART_NEW_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_line    0x0000000000000234       0xbd ../UART_NEW_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_line    0x00000000000002f1       0xa0 ../UART_NEW_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_line    0x0000000000000391      0x119 ../UART_NEW_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_line    0x00000000000004aa       0xf0 ../UART_NEW_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_line    0x000000000000059a       0x5a ../UART_NEW_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_line    0x00000000000005f4       0x6e ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_line    0x0000000000000662       0x50 ../UART_NEW_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_line    0x00000000000006b2       0x7d ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .debug_line    0x000000000000072f      0x159 c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+
+.debug_frame    0x0000000000000000      0x1f4
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x4c obj/default/exception.o
+ .debug_frame   0x000000000000004c       0x20 obj/default/hello_world_small.o
+ .debug_frame   0x000000000000006c       0x30 ../UART_NEW_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_frame   0x000000000000009c       0x2c ../UART_NEW_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_frame   0x00000000000000c8       0x30 ../UART_NEW_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_frame   0x00000000000000f8       0x3c ../UART_NEW_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_frame   0x0000000000000134       0x20 ../UART_NEW_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_frame   0x0000000000000154       0x20 ../UART_NEW_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_frame   0x0000000000000174       0x20 ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_frame   0x0000000000000194       0x20 ../UART_NEW_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_frame   0x00000000000001b4       0x20 ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .debug_frame   0x00000000000001d4       0x20 c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+
+.debug_str      0x0000000000000000      0x6e5
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x123 obj/default/exception.o
+                                        0x128 (size before relaxing)
+ .debug_str     0x0000000000000123       0xc7 obj/default/hello_world_small.o
+                                        0x1de (size before relaxing)
+ .debug_str     0x00000000000001ea      0x163 ../UART_NEW_bsp/\libhal_bsp.a(alt_load.o)
+                                        0x247 (size before relaxing)
+ .debug_str     0x000000000000034d       0x8f ../UART_NEW_bsp/\libhal_bsp.a(alt_main.o)
+                                        0x1c0 (size before relaxing)
+ .debug_str     0x00000000000003dc       0x66 ../UART_NEW_bsp/\libhal_bsp.a(alt_putstr.o)
+                                        0x19d (size before relaxing)
+ .debug_str     0x0000000000000442       0xba ../UART_NEW_bsp/\libhal_bsp.a(alt_sys_init.o)
+                                        0x26c (size before relaxing)
+ .debug_str     0x00000000000004fc       0x3f ../UART_NEW_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                                        0x220 (size before relaxing)
+ .debug_str     0x000000000000053b       0x1f ../UART_NEW_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+                                        0x160 (size before relaxing)
+ .debug_str     0x000000000000055a       0x30 ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+                                        0x171 (size before relaxing)
+ .debug_str     0x000000000000058a       0x20 ../UART_NEW_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+                                        0x167 (size before relaxing)
+ .debug_str     0x00000000000005aa       0x1b ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush.o)
+                                        0x166 (size before relaxing)
+ .debug_str     0x00000000000005c5      0x120 c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+                                        0x1cb (size before relaxing)
+
+.debug_loc      0x0000000000000000      0x20d
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000       0x26 obj/default/exception.o
+ .debug_loc     0x0000000000000026       0x75 obj/default/hello_world_small.o
+ .debug_loc     0x000000000000009b       0x37 ../UART_NEW_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_loc     0x00000000000000d2       0x21 ../UART_NEW_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_loc     0x00000000000000f3       0x8b ../UART_NEW_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_loc     0x000000000000017e       0x1f ../UART_NEW_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_loc     0x000000000000019d       0x52 ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .debug_loc     0x00000000000001ef       0x1e c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_alt_sim_info
+                0x0000000000000000       0x30
+ *(.debug_alt_sim_info)
+ .debug_alt_sim_info
+                0x0000000000000000       0x30 ../UART_NEW_bsp//obj/HAL/src/crt0.o
+                0x0000000004000000                __alt_data_end = 0x4000000
+                0x0000000004000000                PROVIDE (__alt_stack_pointer, __alt_data_end)
+                [!provide]                        PROVIDE (__alt_stack_limit, __alt_stack_base)
+                [!provide]                        PROVIDE (__alt_heap_start, end)
+                [!provide]                        PROVIDE (__alt_heap_limit, 0x4000000)
+OUTPUT(UART_NEW.elf elf32-littlenios2)
+
+.debug_ranges   0x0000000000000000       0xd0
+ .debug_ranges  0x0000000000000000       0x20 ../UART_NEW_bsp//obj/HAL/src/crt0.o
+ .debug_ranges  0x0000000000000020       0x38 obj/default/exception.o
+ .debug_ranges  0x0000000000000058       0x10 obj/default/hello_world_small.o
+ .debug_ranges  0x0000000000000068       0x48 ../UART_NEW_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_ranges  0x00000000000000b0       0x10 ../UART_NEW_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .debug_ranges  0x00000000000000c0       0x10 c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
