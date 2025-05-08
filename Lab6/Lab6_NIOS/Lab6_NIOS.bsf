@@ -1,0 +1,178 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 416 432)
+	(text "Lab6_NIOS" (rect 175 -1 223 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 416 20 428)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "key1_export[1..0]" (rect 0 0 68 12)(font "Arial" (font_size 8)))
+		(text "key1_export[1..0]" (rect 4 61 106 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 176 72)(line_width 3))
+	)
+	(port
+		(pt 0 280)
+		(input)
+		(text "slider_switches_export[9..0]" (rect 0 0 109 12)(font "Arial" (font_size 8)))
+		(text "slider_switches_export[9..0]" (rect 4 269 172 280)(font "Arial" (font_size 8)))
+		(line (pt 0 280)(pt 176 280)(line_width 3))
+	)
+	(port
+		(pt 0 320)
+		(input)
+		(text "sys_pll_ref_clk_clk" (rect 0 0 79 12)(font "Arial" (font_size 8)))
+		(text "sys_pll_ref_clk_clk" (rect 4 309 118 320)(font "Arial" (font_size 8)))
+		(line (pt 0 320)(pt 176 320)(line_width 1))
+	)
+	(port
+		(pt 0 360)
+		(input)
+		(text "sys_pll_ref_reset_reset" (rect 0 0 97 12)(font "Arial" (font_size 8)))
+		(text "sys_pll_ref_reset_reset" (rect 4 349 142 360)(font "Arial" (font_size 8)))
+		(line (pt 0 360)(pt 176 360)(line_width 1))
+	)
+	(port
+		(pt 0 400)
+		(input)
+		(text "us_counter_export[31..0]" (rect 0 0 99 12)(font "Arial" (font_size 8)))
+		(text "us_counter_export[31..0]" (rect 4 389 148 400)(font "Arial" (font_size 8)))
+		(line (pt 0 400)(pt 176 400)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(output)
+		(text "sdram_shared_wire_addr[12..0]" (rect 0 0 127 12)(font "Arial" (font_size 8)))
+		(text "sdram_shared_wire_addr[12..0]" (rect 4 101 178 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 176 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(output)
+		(text "sdram_shared_wire_ba[1..0]" (rect 0 0 114 12)(font "Arial" (font_size 8)))
+		(text "sdram_shared_wire_ba[1..0]" (rect 4 117 160 128)(font "Arial" (font_size 8)))
+		(line (pt 0 128)(pt 176 128)(line_width 3))
+	)
+	(port
+		(pt 0 144)
+		(output)
+		(text "sdram_shared_wire_cas_n" (rect 0 0 110 12)(font "Arial" (font_size 8)))
+		(text "sdram_shared_wire_cas_n" (rect 4 133 142 144)(font "Arial" (font_size 8)))
+		(line (pt 0 144)(pt 176 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(output)
+		(text "sdram_shared_wire_cke" (rect 0 0 100 12)(font "Arial" (font_size 8)))
+		(text "sdram_shared_wire_cke" (rect 4 149 130 160)(font "Arial" (font_size 8)))
+		(line (pt 0 160)(pt 176 160)(line_width 1))
+	)
+	(port
+		(pt 0 176)
+		(output)
+		(text "sdram_shared_wire_cs_n" (rect 0 0 106 12)(font "Arial" (font_size 8)))
+		(text "sdram_shared_wire_cs_n" (rect 4 165 136 176)(font "Arial" (font_size 8)))
+		(line (pt 0 176)(pt 176 176)(line_width 1))
+	)
+	(port
+		(pt 0 208)
+		(output)
+		(text "sdram_shared_wire_dqm[1..0]" (rect 0 0 122 12)(font "Arial" (font_size 8)))
+		(text "sdram_shared_wire_dqm[1..0]" (rect 4 197 166 208)(font "Arial" (font_size 8)))
+		(line (pt 0 208)(pt 176 208)(line_width 3))
+	)
+	(port
+		(pt 0 224)
+		(output)
+		(text "sdram_shared_wire_ras_n" (rect 0 0 109 12)(font "Arial" (font_size 8)))
+		(text "sdram_shared_wire_ras_n" (rect 4 213 142 224)(font "Arial" (font_size 8)))
+		(line (pt 0 224)(pt 176 224)(line_width 1))
+	)
+	(port
+		(pt 0 240)
+		(output)
+		(text "sdram_shared_wire_we_n" (rect 0 0 107 12)(font "Arial" (font_size 8)))
+		(text "sdram_shared_wire_we_n" (rect 4 229 136 240)(font "Arial" (font_size 8)))
+		(line (pt 0 240)(pt 176 240)(line_width 1))
+	)
+	(port
+		(pt 416 72)
+		(output)
+		(text "sys_pll_sdram_clk_clk" (rect 0 0 93 12)(font "Arial" (font_size 8)))
+		(text "sys_pll_sdram_clk_clk" (rect 302 61 428 72)(font "Arial" (font_size 8)))
+		(line (pt 416 72)(pt 240 72)(line_width 1))
+	)
+	(port
+		(pt 0 192)
+		(bidir)
+		(text "sdram_shared_wire_dq[15..0]" (rect 0 0 119 12)(font "Arial" (font_size 8)))
+		(text "sdram_shared_wire_dq[15..0]" (rect 4 181 166 192)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 176 192)(line_width 3))
+	)
+	(drawing
+		(text "key1" (rect 152 43 328 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 181 67 398 144)(font "Arial" (color 0 0 0)))
+		(text "sdram_shared_wire" (rect 59 83 220 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "addr" (rect 181 107 386 224)(font "Arial" (color 0 0 0)))
+		(text "ba" (rect 181 123 374 256)(font "Arial" (color 0 0 0)))
+		(text "cas_n" (rect 181 139 392 288)(font "Arial" (color 0 0 0)))
+		(text "cke" (rect 181 155 380 320)(font "Arial" (color 0 0 0)))
+		(text "cs_n" (rect 181 171 386 352)(font "Arial" (color 0 0 0)))
+		(text "dq" (rect 181 187 374 384)(font "Arial" (color 0 0 0)))
+		(text "dqm" (rect 181 203 380 416)(font "Arial" (color 0 0 0)))
+		(text "ras_n" (rect 181 219 392 448)(font "Arial" (color 0 0 0)))
+		(text "we_n" (rect 181 235 386 480)(font "Arial" (color 0 0 0)))
+		(text "slider_switches" (rect 86 251 262 515)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 181 275 398 560)(font "Arial" (color 0 0 0)))
+		(text "sys_pll_ref_clk" (rect 87 291 264 595)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 181 315 380 640)(font "Arial" (color 0 0 0)))
+		(text "sys_pll_ref_reset" (rect 73 331 248 675)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset" (rect 181 355 392 720)(font "Arial" (color 0 0 0)))
+		(text "sys_pll_sdram_clk" (rect 241 43 584 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 225 67 468 144)(font "Arial" (color 0 0 0)))
+		(text "us_counter" (rect 112 371 284 755)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 181 395 398 800)(font "Arial" (color 0 0 0)))
+		(text " Lab6_NIOS " (rect 363 416 792 842)(font "Arial" ))
+		(line (pt 176 32)(pt 240 32)(line_width 1))
+		(line (pt 240 32)(pt 240 416)(line_width 1))
+		(line (pt 176 416)(pt 240 416)(line_width 1))
+		(line (pt 176 32)(pt 176 416)(line_width 1))
+		(line (pt 177 52)(pt 177 76)(line_width 1))
+		(line (pt 178 52)(pt 178 76)(line_width 1))
+		(line (pt 177 92)(pt 177 244)(line_width 1))
+		(line (pt 178 92)(pt 178 244)(line_width 1))
+		(line (pt 177 260)(pt 177 284)(line_width 1))
+		(line (pt 178 260)(pt 178 284)(line_width 1))
+		(line (pt 177 300)(pt 177 324)(line_width 1))
+		(line (pt 178 300)(pt 178 324)(line_width 1))
+		(line (pt 177 340)(pt 177 364)(line_width 1))
+		(line (pt 178 340)(pt 178 364)(line_width 1))
+		(line (pt 239 52)(pt 239 76)(line_width 1))
+		(line (pt 238 52)(pt 238 76)(line_width 1))
+		(line (pt 177 380)(pt 177 404)(line_width 1))
+		(line (pt 178 380)(pt 178 404)(line_width 1))
+		(line (pt 0 0)(pt 416 0)(line_width 1))
+		(line (pt 416 0)(pt 416 432)(line_width 1))
+		(line (pt 0 432)(pt 416 432)(line_width 1))
+		(line (pt 0 0)(pt 0 432)(line_width 1))
+	)
+)
