@@ -2,9 +2,9 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>May 8, 2025 11:27:52 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1746718072599</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Users\user\Documents\ECE3073\Lab6\software\Lab6_Core1_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>May 12, 2025 2:20:30 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1746987630565</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\Users\dillo\Work_docs\ECE3073\ECE3073_Lab\Lab6\software\Lab6_Core1_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\Lab6_NIOS.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
@@ -890,7 +890,7 @@
                 <SettingName>altera_avalon_jtag_uart_driver.enable_jtag_uart_ignore_fifo_full_error</SettingName>
                 <Identifier>ALTERA_AVALON_JTAG_UART_IGNORE_FIFO_FULL_ERROR</Identifier>
                 <Type>BooleanDefineOnly</Type>
-                <Value>false</Value>
+                <Value>true</Value>
                 <DefaultValue>false</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
                 <Description>Enable JTAG UART driver to recover when host is inactive causing buffer to full without returning error. Printf will not fail with this recovery.</Description>
@@ -898,51 +898,75 @@
                 <Enabled>false</Enabled>
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
+        <LinkerRegion>
+                <regionName>SDRAM_shared</regionName>
+                <memoryName>SDRAM_shared</memoryName>
+                <offset>1048576</offset>
+                <size>1048576</size>
+                <baseAddress>0x1100000</baseAddress>
+                <addressRange>0x01100000 - 0x011FFFFF</addressRange>
+        </LinkerRegion>
+        <LinkerRegion>
+                <regionName>reset</regionName>
+                <memoryName>Core1_RAM</memoryName>
+                <offset>0</offset>
+                <size>32</size>
+                <baseAddress>0x2010000</baseAddress>
+                <addressRange>0x02010000 - 0x0201001F</addressRange>
+        </LinkerRegion>
+        <LinkerRegion>
+                <regionName>Core1_RAM</regionName>
+                <memoryName>Core1_RAM</memoryName>
+                <offset>32</offset>
+                <size>65500</size>
+                <baseAddress>0x2010020</baseAddress>
+                <addressRange>0x02010020 - 0x0201FFFB</addressRange>
+        </LinkerRegion>
         <MemoryMap>
                 <slaveDescriptor>SDRAM_shared</slaveDescriptor>
-                <addressRange>0x00000000 - 0x03FFFFFF</addressRange>
-                <addressSpan>67108864</addressSpan>
+                <addressRange>0x01000000 - 0x01FFFFFF</addressRange>
+                <addressSpan>16777216</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>Core1_RAM</slaveDescriptor>
-                <addressRange>0x04010000 - 0x04019FFF</addressRange>
-                <addressSpan>40960</addressSpan>
+                <addressRange>0x02010000 - 0x0201FFFF</addressRange>
+                <addressSpan>65536</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>us_counter</slaveDescriptor>
-                <addressRange>0x04021000 - 0x0402100F</addressRange>
+                <addressRange>0x02021000 - 0x0202100F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>Slider_switches</slaveDescriptor>
-                <addressRange>0x04021010 - 0x0402101F</addressRange>
+                <addressRange>0x02021010 - 0x0202101F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>Core1_irq_RX</slaveDescriptor>
-                <addressRange>0x04021020 - 0x0402102F</addressRange>
+                <addressRange>0x02021020 - 0x0202102F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>Core1_irq_TX</slaveDescriptor>
-                <addressRange>0x04021030 - 0x0402103F</addressRange>
+                <addressRange>0x02021030 - 0x0202103F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>SDRAM_mutex</slaveDescriptor>
-                <addressRange>0x04021040 - 0x04021047</addressRange>
+                <addressRange>0x02021040 - 0x02021047</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>JTAG_UART_Core1</slaveDescriptor>
-                <addressRange>0x04021048 - 0x0402104F</addressRange>
+                <addressRange>0x02021048 - 0x0202104F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

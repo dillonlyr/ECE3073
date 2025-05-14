@@ -1,10 +1,10 @@
 /*
  * alt_sys_init.c - HAL initialization source
  *
- * Machine generated for CPU 'NIOS_II_Core1' in SOPC Builder design 'Lab6_NIOS'
+ * Machine generated for CPU 'NIOS_II_Core2' in SOPC Builder design 'Lab6_NIOS'
  * SOPC Builder design path: ../../Lab6_NIOS.sopcinfo
  *
- * Generated: Thu May 08 19:14:37 SGT 2025
+ * Generated: Mon May 12 00:23:34 SGT 2025
  */
 
 /*
@@ -66,8 +66,8 @@
  * Allocate the device storage
  */
 
-ALTERA_NIOS2_GEN2_IRQ_INSTANCE ( NIOS_II_CORE1, NIOS_II_Core1);
-ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG_UART_CORE1, JTAG_UART_Core1);
+ALTERA_NIOS2_GEN2_IRQ_INSTANCE ( NIOS_II_CORE2, NIOS_II_Core2);
+ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG_UART_CORE2, JTAG_UART_Core2);
 ALTERA_AVALON_MUTEX_INSTANCE ( SDRAM_MUTEX, SDRAM_mutex);
 
 /*
@@ -80,7 +80,7 @@ ALTERA_AVALON_MUTEX_INSTANCE ( SDRAM_MUTEX, SDRAM_mutex);
 
 void alt_irq_init ( const void* base )
 {
-    ALTERA_NIOS2_GEN2_IRQ_INIT ( NIOS_II_CORE1, NIOS_II_Core1);
+    ALTERA_NIOS2_GEN2_IRQ_INIT ( NIOS_II_CORE2, NIOS_II_Core2);
     alt_irq_cpu_enable_interrupts();
 }
 
@@ -91,6 +91,6 @@ void alt_irq_init ( const void* base )
 
 void alt_sys_init( void )
 {
-    ALTERA_AVALON_JTAG_UART_INIT ( JTAG_UART_CORE1, JTAG_UART_Core1);
+    ALTERA_AVALON_JTAG_UART_INIT ( JTAG_UART_CORE2, JTAG_UART_Core2);
     ALTERA_AVALON_MUTEX_INIT ( SDRAM_MUTEX, SDRAM_mutex);
 }

@@ -2,13 +2,13 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>May 8, 2025 11:08:57 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1746716937636</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Users\user\Documents\ECE3073\Lab6\software\Lab6_Core2_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>May 12, 2025 2:21:01 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1746987661483</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\Users\dillo\Work_docs\ECE3073\ECE3073_Lab\Lab6\software\Lab6_Core2_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\Lab6_NIOS.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
-        <Cpu>NIOS_II_Core1</Cpu>
+        <Cpu>NIOS_II_Core2</Cpu>
         <SchemaVersion>1.9</SchemaVersion>
         <Setting>
                 <SettingName>hal.sys_clk_timer</SettingName>
@@ -110,7 +110,7 @@
                 <SettingName>hal.linker.enable_alt_load_copy_exceptions</SettingName>
                 <Identifier>none</Identifier>
                 <Type>Boolean</Type>
-                <Value>0</Value>
+                <Value>1</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>none</DestinationFile>
                 <Description>Causes the alt_load() facility to copy the .exceptions section. If true, this setting defines the macro ALT_LOAD_COPY_EXCEPTIONS in linker.h.</Description>
@@ -194,7 +194,7 @@
                 <SettingName>hal.stdin</SettingName>
                 <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>JTAG_UART_Core1</Value>
+                <Value>JTAG_UART_Core2</Value>
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Slave descriptor of STDIN character-mode device. This setting is used by the ALT_STDIN family of defines in system.h.</Description>
@@ -206,7 +206,7 @@
                 <SettingName>hal.stdout</SettingName>
                 <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>JTAG_UART_Core1</Value>
+                <Value>JTAG_UART_Core2</Value>
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Slave descriptor of STDOUT character-mode device. This setting is used by the ALT_STDOUT family of defines in system.h.</Description>
@@ -218,7 +218,7 @@
                 <SettingName>hal.stderr</SettingName>
                 <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>JTAG_UART_Core1</Value>
+                <Value>JTAG_UART_Core2</Value>
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Slave descriptor of STDERR character-mode device. This setting is used by the ALT_STDERR family of defines in system.h.</Description>
@@ -890,7 +890,7 @@
                 <SettingName>altera_avalon_jtag_uart_driver.enable_jtag_uart_ignore_fifo_full_error</SettingName>
                 <Identifier>ALTERA_AVALON_JTAG_UART_IGNORE_FIFO_FULL_ERROR</Identifier>
                 <Type>BooleanDefineOnly</Type>
-                <Value>false</Value>
+                <Value>true</Value>
                 <DefaultValue>false</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
                 <Description>Enable JTAG UART driver to recover when host is inactive causing buffer to full without returning error. Printf will not fail with this recovery.</Description>
@@ -898,53 +898,83 @@
                 <Enabled>false</Enabled>
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
+        <LinkerRegion>
+                <regionName>Core2_RAM</regionName>
+                <memoryName>Core2_RAM</memoryName>
+                <offset>32</offset>
+                <size>65500</size>
+                <baseAddress>0x10020</baseAddress>
+                <addressRange>0x00010020 - 0x0001FFFB</addressRange>
+        </LinkerRegion>
+        <LinkerRegion>
+                <regionName>reset</regionName>
+                <memoryName>reset_RAM</memoryName>
+                <offset>0</offset>
+                <size>32</size>
+                <baseAddress>0x21080</baseAddress>
+                <addressRange>0x00021080 - 0x0002109F</addressRange>
+        </LinkerRegion>
+        <LinkerRegion>
+                <regionName>SDRAM_shared</regionName>
+                <memoryName>SDRAM_shared</memoryName>
+                <offset>2097152</offset>
+                <size>1048576</size>
+                <baseAddress>0x1200000</baseAddress>
+                <addressRange>0x01200000 - 0x012FFFFF</addressRange>
+        </LinkerRegion>
         <MemoryMap>
-                <slaveDescriptor>SDRAM_shared</slaveDescriptor>
-                <addressRange>0x00000000 - 0x03FFFFFF</addressRange>
-                <addressSpan>67108864</addressSpan>
+                <slaveDescriptor>Core2_RAM</slaveDescriptor>
+                <addressRange>0x00010000 - 0x0001FFFF</addressRange>
+                <addressSpan>65536</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>Core1_RAM</slaveDescriptor>
-                <addressRange>0x04010000 - 0x04019FFF</addressRange>
-                <addressSpan>40960</addressSpan>
+                <slaveDescriptor>reset_RAM</slaveDescriptor>
+                <addressRange>0x00021080 - 0x000210FF</addressRange>
+                <addressSpan>128</addressSpan>
+                <attributes>memory</attributes>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>Core2_irq_TX</slaveDescriptor>
+                <addressRange>0x00021100 - 0x0002110F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>KEYS</slaveDescriptor>
+                <addressRange>0x00021110 - 0x0002111F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>Core2_irq_RX</slaveDescriptor>
+                <addressRange>0x00021120 - 0x0002112F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>JTAG_UART_Core2</slaveDescriptor>
+                <addressRange>0x00021130 - 0x00021137</addressRange>
+                <addressSpan>8</addressSpan>
+                <attributes>printable</attributes>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>SDRAM_shared</slaveDescriptor>
+                <addressRange>0x01000000 - 0x01FFFFFF</addressRange>
+                <addressSpan>16777216</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>us_counter</slaveDescriptor>
-                <addressRange>0x04021000 - 0x0402100F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>Slider_switches</slaveDescriptor>
-                <addressRange>0x04021010 - 0x0402101F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>Core1_irq_RX</slaveDescriptor>
-                <addressRange>0x04021020 - 0x0402102F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>Core1_irq_TX</slaveDescriptor>
-                <addressRange>0x04021030 - 0x0402103F</addressRange>
+                <addressRange>0x02021000 - 0x0202100F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>SDRAM_mutex</slaveDescriptor>
-                <addressRange>0x04021040 - 0x04021047</addressRange>
+                <addressRange>0x02021040 - 0x02021047</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>JTAG_UART_Core1</slaveDescriptor>
-                <addressRange>0x04021048 - 0x0402104F</addressRange>
-                <addressSpan>8</addressSpan>
-                <attributes>printable</attributes>
         </MemoryMap>
         <LinkerSection>
                 <sectionName>.text</sectionName>

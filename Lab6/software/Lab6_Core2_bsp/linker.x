@@ -1,10 +1,10 @@
 /*
  * linker.x - Linker script
  *
- * Machine generated for CPU 'NIOS_II_Core1' in SOPC Builder design 'Lab6_NIOS'
+ * Machine generated for CPU 'NIOS_II_Core2' in SOPC Builder design 'Lab6_NIOS'
  * SOPC Builder design path: ../../Lab6_NIOS.sopcinfo
  *
- * Generated: Thu May 08 23:08:58 SGT 2025
+ * Generated: Mon May 12 02:20:59 SGT 2025
  */
 
 /*
@@ -50,15 +50,15 @@
 
 MEMORY
 {
-    SDRAM_shared_BEFORE_RESET : ORIGIN = 0x0, LENGTH = 1048576
-    reset : ORIGIN = 0x100000, LENGTH = 32
-    SDRAM_shared : ORIGIN = 0x100020, LENGTH = 1048544
-    Core1_RAM : ORIGIN = 0x4010000, LENGTH = 40960
+    Core2_RAM : ORIGIN = 0x10020, LENGTH = 65500
+    reset : ORIGIN = 0x21080, LENGTH = 32
+    SDRAM_shared : ORIGIN = 0x1200000, LENGTH = 1048576
 }
 
 /* Define symbols for each memory base-address */
-__alt_mem_SDRAM_shared = 0x0;
-__alt_mem_Core1_RAM = 0x4010000;
+__alt_mem_Core2_RAM = 0x10000;
+__alt_mem_reset_RAM = 0x21080;
+__alt_mem_SDRAM_shared = 0x1000000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",
@@ -87,7 +87,14 @@ SECTIONS
         KEEP (*(.entry))
     } > reset
 
-    .exceptions :
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .exceptions : AT ( 0x1200000 )
     {
         PROVIDE (__ram_exceptions_start = ABSOLUTE(.));
         . = ALIGN(0x20);
@@ -114,11 +121,18 @@ SECTIONS
         KEEP (*(.exceptions.exit));
         KEEP (*(.exceptions));
         PROVIDE (__ram_exceptions_end = ABSOLUTE(.));
-    } > SDRAM_shared
+    } > Core2_RAM
 
     PROVIDE (__flash_exceptions_start = LOADADDR(.exceptions));
 
-    .text :
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .text LOADADDR (.exceptions) + SIZEOF (.exceptions) : AT ( LOADADDR (.exceptions) + SIZEOF (.exceptions) )
     {
         /*
          * All code sections are merged into the text output section, along with
@@ -212,7 +226,14 @@ SECTIONS
         . = ALIGN(4);
     } > SDRAM_shared = 0x3a880100 /* NOP instruction (always in big-endian byte ordering) */
 
-    .rodata :
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .rodata LOADADDR (.text) + SIZEOF (.text) : AT ( LOADADDR (.text) + SIZEOF (.text) )
     {
         PROVIDE (__ram_rodata_start = ABSOLUTE(.));
         . = ALIGN(4);
@@ -310,7 +331,24 @@ SECTIONS
      *
      */
 
-    .SDRAM_shared LOADADDR (.bss) + SIZEOF (.bss) : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
+    .Core2_RAM : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
+    {
+        PROVIDE (_alt_partition_Core2_RAM_start = ABSOLUTE(.));
+        *(.Core2_RAM .Core2_RAM. Core2_RAM.*)
+        . = ALIGN(4);
+        PROVIDE (_alt_partition_Core2_RAM_end = ABSOLUTE(.));
+    } > Core2_RAM
+
+    PROVIDE (_alt_partition_Core2_RAM_load_addr = LOADADDR(.Core2_RAM));
+
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .SDRAM_shared LOADADDR (.Core2_RAM) + SIZEOF (.Core2_RAM) : AT ( LOADADDR (.Core2_RAM) + SIZEOF (.Core2_RAM) )
     {
         PROVIDE (_alt_partition_SDRAM_shared_start = ABSOLUTE(.));
         *(.SDRAM_shared .SDRAM_shared. SDRAM_shared.*)
@@ -322,23 +360,6 @@ SECTIONS
     } > SDRAM_shared
 
     PROVIDE (_alt_partition_SDRAM_shared_load_addr = LOADADDR(.SDRAM_shared));
-
-    /*
-     *
-     * This section's LMA is set to the .text region.
-     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
-     *
-     */
-
-    .Core1_RAM : AT ( LOADADDR (.SDRAM_shared) + SIZEOF (.SDRAM_shared) )
-    {
-        PROVIDE (_alt_partition_Core1_RAM_start = ABSOLUTE(.));
-        *(.Core1_RAM .Core1_RAM. Core1_RAM.*)
-        . = ALIGN(4);
-        PROVIDE (_alt_partition_Core1_RAM_end = ABSOLUTE(.));
-    } > Core1_RAM
-
-    PROVIDE (_alt_partition_Core1_RAM_load_addr = LOADADDR(.Core1_RAM));
 
     /*
      * Stabs debugging sections.
@@ -387,7 +408,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0x200000;
+__alt_data_end = 0x1300000;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -403,4 +424,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0x200000 );
+PROVIDE( __alt_heap_limit    = 0x1300000 );

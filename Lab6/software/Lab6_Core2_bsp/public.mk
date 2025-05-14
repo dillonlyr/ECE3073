@@ -113,8 +113,8 @@ BSP_TYPE := hal
 # setting CDX is false
 
 # CPU Name 
-# setting CPU_NAME is NIOS_II_Core1
-CPU_NAME = NIOS_II_Core1
+# setting CPU_NAME is NIOS_II_Core2
+CPU_NAME = NIOS_II_Core2
 ELF_PATCH_FLAG  += --cpu_name $(CPU_NAME)
 
 # Hardware Divider present. 
@@ -148,7 +148,7 @@ ELF_PATCH_FLAG  += --simulation_enabled false
 
 # Enable JTAG UART driver to recover when host is inactive causing buffer to 
 # full without returning error. Printf will not fail with this recovery. none 
-# setting altera_avalon_jtag_uart_driver.enable_jtag_uart_ignore_fifo_full_error is false
+# setting altera_avalon_jtag_uart_driver.enable_jtag_uart_ignore_fifo_full_error is true
 
 # Small-footprint (polled mode) driver none 
 # setting altera_avalon_jtag_uart_driver.enable_small_driver is false
@@ -336,18 +336,18 @@ ALT_CFLAGS += -mgpopt=global
 
 # Slave descriptor of STDERR character-mode device. This setting is used by the 
 # ALT_STDERR family of defines in system.h. none 
-# setting hal.stderr is JTAG_UART_Core1
-ELF_PATCH_FLAG  += --stderr_dev JTAG_UART_Core1
+# setting hal.stderr is JTAG_UART_Core2
+ELF_PATCH_FLAG  += --stderr_dev JTAG_UART_Core2
 
 # Slave descriptor of STDIN character-mode device. This setting is used by the 
 # ALT_STDIN family of defines in system.h. none 
-# setting hal.stdin is JTAG_UART_Core1
-ELF_PATCH_FLAG  += --stdin_dev JTAG_UART_Core1
+# setting hal.stdin is JTAG_UART_Core2
+ELF_PATCH_FLAG  += --stdin_dev JTAG_UART_Core2
 
 # Slave descriptor of STDOUT character-mode device. This setting is used by the 
 # ALT_STDOUT family of defines in system.h. none 
-# setting hal.stdout is JTAG_UART_Core1
-ELF_PATCH_FLAG  += --stdout_dev JTAG_UART_Core1
+# setting hal.stdout is JTAG_UART_Core2
+ELF_PATCH_FLAG  += --stdout_dev JTAG_UART_Core2
 
 
 #------------------------------------------------------------------------------
@@ -361,6 +361,12 @@ ALT_INCLUDE_DIRS += $(ALT_LIBRARY_ROOT_DIR)/HAL/inc
 #------------------------------------------------------------------------------
 
 ALT_CPPFLAGS += -DALT_SINGLE_THREADED
+
+#------------------------------------------------------------------------------
+#        SOFTWARE COMPONENT & DRIVER SETTING-PRODUCED DEFINITIONS
+#------------------------------------------------------------------------------
+
+ALT_CPPFLAGS += -DALTERA_AVALON_JTAG_UART_IGNORE_FIFO_FULL_ERROR
 
 #END MANAGED
 

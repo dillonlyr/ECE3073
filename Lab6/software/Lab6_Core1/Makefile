@@ -142,7 +142,8 @@ ACDS_VERSION := 18.1
 ELF := Lab6_Core1.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS := hello_world_small.c
+C_SRCS += hello_world_small.c
+C_SRCS += exception.c
 CXX_SRCS :=
 ASM_SRCS :=
 

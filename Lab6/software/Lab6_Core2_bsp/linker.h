@@ -1,10 +1,10 @@
 /*
  * linker.h - Linker script mapping information
  *
- * Machine generated for CPU 'NIOS_II_Core1' in SOPC Builder design 'Lab6_NIOS'
+ * Machine generated for CPU 'NIOS_II_Core2' in SOPC Builder design 'Lab6_NIOS'
  * SOPC Builder design path: ../../Lab6_NIOS.sopcinfo
  *
- * Generated: Thu May 08 23:08:58 SGT 2025
+ * Generated: Mon May 12 02:20:59 SGT 2025
  */
 
 /*
@@ -65,14 +65,12 @@
  *
  */
 
-#define CORE1_RAM_REGION_BASE 0x4010000
-#define CORE1_RAM_REGION_SPAN 40960
-#define RESET_REGION_BASE 0x100000
+#define CORE2_RAM_REGION_BASE 0x10020
+#define CORE2_RAM_REGION_SPAN 65500
+#define RESET_REGION_BASE 0x21080
 #define RESET_REGION_SPAN 32
-#define SDRAM_SHARED_BEFORE_RESET_REGION_BASE 0x0
-#define SDRAM_SHARED_BEFORE_RESET_REGION_SPAN 1048576
-#define SDRAM_SHARED_REGION_BASE 0x100020
-#define SDRAM_SHARED_REGION_SPAN 1048544
+#define SDRAM_SHARED_REGION_BASE 0x1200000
+#define SDRAM_SHARED_REGION_SPAN 1048576
 
 
 /*
@@ -80,8 +78,8 @@
  *
  */
 
-#define ALT_EXCEPTIONS_DEVICE SDRAM_SHARED
-#define ALT_RESET_DEVICE SDRAM_SHARED
+#define ALT_EXCEPTIONS_DEVICE CORE2_RAM
+#define ALT_RESET_DEVICE RESET_RAM
 #define ALT_RODATA_DEVICE SDRAM_SHARED
 #define ALT_RWDATA_DEVICE SDRAM_SHARED
 #define ALT_TEXT_DEVICE SDRAM_SHARED
@@ -100,6 +98,7 @@
  *
  */
 
+#define ALT_LOAD_COPY_EXCEPTIONS
 #define ALT_LOAD_COPY_RWDATA
 
 #endif /* __LINKER_H_ */

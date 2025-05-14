@@ -4,7 +4,7 @@
  * Machine generated for CPU 'NIOS_II_Core1' in SOPC Builder design 'Lab6_NIOS'
  * SOPC Builder design path: ../../Lab6_NIOS.sopcinfo
  *
- * Generated: Thu May 08 23:27:54 SGT 2025
+ * Generated: Mon May 12 02:12:12 SGT 2025
  */
 
 /*
@@ -50,14 +50,14 @@
 
 MEMORY
 {
-    reset : ORIGIN = 0x0, LENGTH = 32
-    SDRAM_shared : ORIGIN = 0x20, LENGTH = 67108832
-    Core1_RAM : ORIGIN = 0x4010000, LENGTH = 40960
+    SDRAM_shared : ORIGIN = 0x1100000, LENGTH = 1048576
+    reset : ORIGIN = 0x2010000, LENGTH = 32
+    Core1_RAM : ORIGIN = 0x2010020, LENGTH = 65500
 }
 
 /* Define symbols for each memory base-address */
-__alt_mem_SDRAM_shared = 0x0;
-__alt_mem_Core1_RAM = 0x4010000;
+__alt_mem_SDRAM_shared = 0x1000000;
+__alt_mem_Core1_RAM = 0x2010000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",
@@ -113,7 +113,7 @@ SECTIONS
         KEEP (*(.exceptions.exit));
         KEEP (*(.exceptions));
         PROVIDE (__ram_exceptions_end = ABSOLUTE(.));
-    } > SDRAM_shared
+    } > Core1_RAM
 
     PROVIDE (__flash_exceptions_start = LOADADDR(.exceptions));
 
@@ -386,7 +386,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0x4000000;
+__alt_data_end = 0x1200000;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -402,4 +402,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0x4000000 );
+PROVIDE( __alt_heap_limit    = 0x1200000 );

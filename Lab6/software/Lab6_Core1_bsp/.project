@@ -3,6 +3,7 @@
 	<name>Lab6_Core1_bsp</name>
 	<comment></comment>
 	<projects>
+		<project>Lab6_Core2_bsp</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -23,7 +23,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 232 96 400 112)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "KEY[1..0]" (rect 5 0 49 17)(font "Intel Clear" ))
+	(text "KEY[1..0]" (rect 5 0 48 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -34,13 +34,13 @@ refer to the applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 176 112 232 136))
+	(annotation_block (location)(rect 88 64 144 88))
 )
 (pin
 	(input)
 	(rect 216 304 384 320)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SW[9..0]" (rect 5 0 46 17)(font "Intel Clear" ))
+	(text "SW[9..0]" (rect 5 0 45 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -57,7 +57,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect -24 344 144 360)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "CLK_50M" (rect 5 0 53 17)(font "Intel Clear" ))
+	(text "CLK_50M" (rect 5 0 52 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -86,13 +86,13 @@ refer to the applicable agreement for further details.
 		(line (pt 106 12)(pt 102 8))
 	)
 	(flipy)
-	(annotation_block (location)(rect 400 152 464 176))
+	(annotation_block (location)(rect 48 160 112 184))
 )
 (pin
 	(output)
 	(rect 224 152 400 168)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "DRAM_ba[1..0]" (rect 5 0 77 17)(font "Intel Clear" ))
+	(text "DRAM_ba[1..0]" (rect 5 0 76 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -104,13 +104,13 @@ refer to the applicable agreement for further details.
 		(line (pt 98 12)(pt 94 8))
 	)
 	(flipy)
-	(annotation_block (location)(rect 400 168 464 192))
+	(annotation_block (location)(rect 56 176 120 200))
 )
 (pin
 	(output)
 	(rect 224 168 400 184)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "DRAM_cas_n" (rect 5 0 69 17)(font "Intel Clear" ))
+	(text "DRAM_cas_n" (rect 5 0 68 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -122,13 +122,13 @@ refer to the applicable agreement for further details.
 		(line (pt 98 12)(pt 94 8))
 	)
 	(flipy)
-	(annotation_block (location)(rect 400 184 464 208))
+	(annotation_block (location)(rect 40 200 104 224))
 )
 (pin
 	(output)
 	(rect 224 184 400 200)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "DRAM_cke" (rect 5 0 59 17)(font "Intel Clear" ))
+	(text "DRAM_cke" (rect 5 0 58 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -140,13 +140,13 @@ refer to the applicable agreement for further details.
 		(line (pt 98 12)(pt 94 8))
 	)
 	(flipy)
-	(annotation_block (location)(rect 400 200 464 224))
+	(annotation_block (location)(rect 64 224 128 248))
 )
 (pin
 	(output)
 	(rect 224 200 400 216)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "DRAM_cs_n" (rect 5 0 63 17)(font "Intel Clear" ))
+	(text "DRAM_cs_n" (rect 5 0 62 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -158,13 +158,13 @@ refer to the applicable agreement for further details.
 		(line (pt 98 12)(pt 94 8))
 	)
 	(flipy)
-	(annotation_block (location)(rect 400 216 464 240))
+	(annotation_block (location)(rect 72 264 136 288))
 )
 (pin
 	(output)
 	(rect 224 232 400 248)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "DRAM_dqm[1..0]" (rect 5 0 87 17)(font "Intel Clear" ))
+	(text "DRAM_dqm[1..0]" (rect 5 0 86 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -176,13 +176,13 @@ refer to the applicable agreement for further details.
 		(line (pt 98 12)(pt 94 8))
 	)
 	(flipy)
-	(annotation_block (location)(rect 400 248 464 272))
+	(annotation_block (location)(rect -8 216 56 240))
 )
 (pin
 	(output)
 	(rect 224 248 400 264)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "DRAM_ras_n" (rect 5 0 68 17)(font "Intel Clear" ))
+	(text "DRAM_ras_n" (rect 5 0 67 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -194,13 +194,13 @@ refer to the applicable agreement for further details.
 		(line (pt 98 12)(pt 94 8))
 	)
 	(flipy)
-	(annotation_block (location)(rect 400 264 464 288))
+	(annotation_block (location)(rect 32 256 96 280))
 )
 (pin
 	(output)
 	(rect 224 264 400 280)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "DRAM_we_n" (rect 5 0 68 17)(font "Intel Clear" ))
+	(text "DRAM_we_n" (rect 5 0 67 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -212,7 +212,7 @@ refer to the applicable agreement for further details.
 		(line (pt 98 12)(pt 94 8))
 	)
 	(flipy)
-	(annotation_block (location)(rect 400 280 464 304))
+	(annotation_block (location)(rect -16 248 48 272))
 )
 (pin
 	(output)
@@ -235,7 +235,7 @@ refer to the applicable agreement for further details.
 	(bidir)
 	(rect 224 216 400 232)
 	(text "BIDIR" (rect 151 0 175 10)(font "Arial" (font_size 6)))
-	(text "DRAM_dq[15..0]" (rect 5 0 83 17)(font "Intel Clear" ))
+	(text "DRAM_dq[15..0]" (rect 5 0 82 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 120 4)(pt 98 4))
@@ -248,7 +248,7 @@ refer to the applicable agreement for further details.
 	)
 	(flipy)
 	(text "VCC" (rect 152 7 172 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 400 232 464 256))
+	(annotation_block (location)(rect 40 256 104 280))
 )
 (symbol
 	(rect 376 376 408 408)

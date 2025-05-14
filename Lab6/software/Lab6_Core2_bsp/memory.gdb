@@ -1,9 +1,9 @@
 # memory.gdb - GDB memory region definitions
 #
-# Machine generated for CPU 'NIOS_II_Core1' in SOPC Builder design 'Lab6_NIOS'
+# Machine generated for CPU 'NIOS_II_Core2' in SOPC Builder design 'Lab6_NIOS'
 # SOPC Builder design path: ../../Lab6_NIOS.sopcinfo
 #
-# Generated: Thu May 08 19:14:37 SGT 2025
+# Generated: Mon May 12 02:20:59 SGT 2025
 
 # DO NOT MODIFY THIS FILE
 #
@@ -46,8 +46,11 @@
 # The cache attribute is specified which improves GDB performance
 # by allowing GDB to cache memory contents on the host.
 
-# SDRAM_shared
-memory 0x0 0x4000000 cache
+# Core2_RAM
+memory 0x10000 0x20000 cache
 
-# Core1_RAM
-memory 0x4010000 0x401a000 cache
+# reset_RAM
+memory 0x21080 0x21100 cache
+
+# SDRAM_shared
+memory 0x1000000 0x2000000 cache
