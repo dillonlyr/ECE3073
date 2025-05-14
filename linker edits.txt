@@ -1,0 +1,9 @@
+	.reset :
+	{
+	    KEEP(*(.reset))
+	} > reset AT > reset
+	
+	.entry :
+	{
+	    KEEP(*(.entry))
+	} > Core1_RAM AT > Core1_RAM
