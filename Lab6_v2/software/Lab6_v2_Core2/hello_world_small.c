@@ -167,8 +167,8 @@ int main()
   volatile int *B = UNCACHE(MATRIX_B_ADDR);
   volatile int *C = UNCACHE(MATRIX_C_ADDR);
   matrix_rng(N, B);
-//  printf("\nB :\n");
-//  print_matrix_w_addresses(N, B);
+  printf("\nB :\n");
+  print_matrix_w_addresses(N, B);
 
 
   // Stage 2, Multiply matrix A & B

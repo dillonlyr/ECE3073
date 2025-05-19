@@ -13,7 +13,7 @@
    {
       datum _sortIndex
       {
-         value = "13";
+         value = "12";
          type = "int";
       }
    }
@@ -29,7 +29,7 @@
    {
       datum _sortIndex
       {
-         value = "5";
+         value = "4";
          type = "int";
       }
    }
@@ -45,7 +45,7 @@
    {
       datum _sortIndex
       {
-         value = "9";
+         value = "8";
          type = "int";
       }
    }
@@ -61,7 +61,7 @@
    {
       datum _sortIndex
       {
-         value = "7";
+         value = "6";
          type = "int";
       }
    }
@@ -77,7 +77,7 @@
    {
       datum _sortIndex
       {
-         value = "14";
+         value = "13";
          type = "int";
       }
    }
@@ -98,7 +98,7 @@
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "5";
          type = "int";
       }
    }
@@ -119,7 +119,7 @@
    {
       datum _sortIndex
       {
-         value = "10";
+         value = "9";
          type = "int";
       }
    }
@@ -140,7 +140,7 @@
    {
       datum _sortIndex
       {
-         value = "8";
+         value = "7";
          type = "int";
       }
    }
@@ -161,7 +161,7 @@
    {
       datum _sortIndex
       {
-         value = "1";
+         value = "0";
          type = "int";
       }
    }
@@ -177,7 +177,7 @@
    {
       datum _sortIndex
       {
-         value = "2";
+         value = "1";
          type = "int";
       }
    }
@@ -198,7 +198,7 @@
    {
       datum _sortIndex
       {
-         value = "12";
+         value = "11";
          type = "int";
       }
    }
@@ -219,7 +219,7 @@
    {
       datum _sortIndex
       {
-         value = "3";
+         value = "2";
          type = "int";
       }
    }
@@ -240,7 +240,7 @@
    {
       datum _sortIndex
       {
-         value = "11";
+         value = "10";
          type = "int";
       }
    }
@@ -252,11 +252,19 @@
          type = "String";
       }
    }
+   element clk_0
+   {
+      datum _sortIndex
+      {
+         value = "15";
+         type = "int";
+      }
+   }
    element mutex
    {
       datum _sortIndex
       {
-         value = "4";
+         value = "3";
          type = "int";
       }
    }
@@ -268,19 +276,11 @@
          type = "String";
       }
    }
-   element system_PLL
-   {
-      datum _sortIndex
-      {
-         value = "0";
-         type = "int";
-      }
-   }
    element us_counter
    {
       datum _sortIndex
       {
-         value = "15";
+         value = "14";
          type = "int";
       }
    }
@@ -313,11 +313,13 @@
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
+ <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface
    name="pushbuttons"
    internal="Pushbuttons.external_connection"
    type="conduit"
    dir="end" />
+ <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <interface
    name="sdram_shared_wire"
    internal="SDRAM_shared.wire"
@@ -328,21 +330,6 @@
    internal="Slider_switches.external_connection"
    type="conduit"
    dir="end" />
- <interface
-   name="system_pll_ref_clk"
-   internal="system_PLL.ref_clk"
-   type="clock"
-   dir="end" />
- <interface
-   name="system_pll_ref_reset"
-   internal="system_PLL.ref_reset"
-   type="reset"
-   dir="end" />
- <interface
-   name="system_pll_sdram_clk"
-   internal="system_PLL.sdram_clk"
-   type="clock"
-   dir="start" />
  <interface
    name="us_counter"
    internal="us_counter.external_connection"
@@ -355,7 +342,7 @@
    enabled="1">
   <parameter name="allowMultipleConnections" value="false" />
   <parameter name="avalonSpec" value="2.0" />
-  <parameter name="clkFreq" value="100000000" />
+  <parameter name="clkFreq" value="50000000" />
   <parameter name="hubInstanceID" value="0" />
   <parameter name="readBufferDepth" value="64" />
   <parameter name="readIRQThreshold" value="8" />
@@ -403,7 +390,7 @@
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="true" />
-  <parameter name="clockRate" value="100000000" />
+  <parameter name="clockRate" value="50000000" />
   <parameter name="direction" value="Input" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="true" />
@@ -417,7 +404,7 @@
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="100000000" />
+  <parameter name="clockRate" value="50000000" />
   <parameter name="direction" value="Output" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="false" />
@@ -434,7 +421,7 @@
    enabled="1">
   <parameter name="allowMultipleConnections" value="false" />
   <parameter name="avalonSpec" value="2.0" />
-  <parameter name="clkFreq" value="100000000" />
+  <parameter name="clkFreq" value="50000000" />
   <parameter name="hubInstanceID" value="0" />
   <parameter name="readBufferDepth" value="64" />
   <parameter name="readIRQThreshold" value="8" />
@@ -482,7 +469,7 @@
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="true" />
-  <parameter name="clockRate" value="100000000" />
+  <parameter name="clockRate" value="50000000" />
   <parameter name="direction" value="Input" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="true" />
@@ -496,7 +483,7 @@
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="100000000" />
+  <parameter name="clockRate" value="50000000" />
   <parameter name="direction" value="Output" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="false" />
@@ -511,15 +498,15 @@
    kind="altera_nios2_gen2"
    version="18.1"
    enabled="1">
-  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="7" />
-  <parameter name="AUTO_CLK_RESET_DOMAIN" value="7" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />
   <parameter name="AUTO_DEVICE" value="10M50DAF484C7G" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <parameter name="bht_ramBlockType" value="Automatic" />
   <parameter name="breakOffset" value="32" />
   <parameter name="breakSlave" value="None" />
   <parameter name="cdx_enabled" value="false" />
-  <parameter name="clockFrequency" value="100000000" />
+  <parameter name="clockFrequency" value="50000000" />
   <parameter name="cpuArchRev" value="1" />
   <parameter name="cpuID" value="0" />
   <parameter name="cpuReset" value="false" />
@@ -693,15 +680,15 @@
    kind="altera_nios2_gen2"
    version="18.1"
    enabled="1">
-  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="7" />
-  <parameter name="AUTO_CLK_RESET_DOMAIN" value="7" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />
   <parameter name="AUTO_DEVICE" value="10M50DAF484C7G" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <parameter name="bht_ramBlockType" value="Automatic" />
   <parameter name="breakOffset" value="32" />
   <parameter name="breakSlave" value="None" />
   <parameter name="cdx_enabled" value="false" />
-  <parameter name="clockFrequency" value="100000000" />
+  <parameter name="clockFrequency" value="50000000" />
   <parameter name="cpuArchRev" value="1" />
   <parameter name="cpuID" value="1" />
   <parameter name="cpuReset" value="false" />
@@ -878,7 +865,7 @@
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="true" />
-  <parameter name="clockRate" value="100000000" />
+  <parameter name="clockRate" value="50000000" />
   <parameter name="direction" value="Input" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="true" />
@@ -900,7 +887,7 @@
   <parameter name="TRP" value="20.0" />
   <parameter name="TWR" value="14.0" />
   <parameter name="casLatency" value="3" />
-  <parameter name="clockRate" value="100000000" />
+  <parameter name="clockRate" value="50000000" />
   <parameter name="columnWidth" value="10" />
   <parameter name="componentName">$${FILENAME}_SDRAM_shared</parameter>
   <parameter name="dataWidth" value="16" />
@@ -925,7 +912,7 @@
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="100000000" />
+  <parameter name="clockRate" value="50000000" />
   <parameter name="direction" value="Input" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="false" />
@@ -935,31 +922,21 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="10" />
  </module>
+ <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="clockFrequencyKnown" value="true" />
+  <parameter name="inputClockFrequency" value="0" />
+  <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
  <module name="mutex" kind="altera_avalon_mutex" version="18.1" enabled="1">
   <parameter name="initialOwner" value="0" />
   <parameter name="initialValue" value="0" />
- </module>
- <module
-   name="system_PLL"
-   kind="altera_up_avalon_sys_sdram_pll"
-   version="18.0"
-   enabled="1">
-  <parameter name="AUTO_DEVICE" value="10M50DAF484C7G" />
-  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
-  <parameter name="CIII_boards" value="DE0" />
-  <parameter name="CIV_boards" value="DE2-115" />
-  <parameter name="CV_boards" value="DE10-Standard" />
-  <parameter name="MAX10_boards" value="DE10-Lite" />
-  <parameter name="device_family" value="MAX 10" />
-  <parameter name="gui_outclk" value="50.0" />
-  <parameter name="gui_refclk" value="50.0" />
-  <parameter name="other_boards" value="None" />
  </module>
  <module name="us_counter" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="100000000" />
+  <parameter name="clockRate" value="50000000" />
   <parameter name="direction" value="Input" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="false" />
@@ -1185,81 +1162,33 @@
   <parameter name="baseAddress" value="0x00010000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="Nios2_Core1.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="Nios2_Core2.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="SDRAM_shared.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="mutex.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="Core1_TX.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="Core2_TX.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="Core1_RX.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="Core2_RX.clk" />
  <connection
    kind="clock"
    version="18.1"
-   start="system_PLL.sys_clk"
-   end="Nios2_Core1.clk" />
+   start="clk_0.clk"
+   end="Slider_switches.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="Pushbuttons.clk" />
  <connection
    kind="clock"
    version="18.1"
-   start="system_PLL.sys_clk"
-   end="Nios2_Core2.clk" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="system_PLL.sys_clk"
-   end="SDRAM_shared.clk" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="system_PLL.sys_clk"
-   end="mutex.clk" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="system_PLL.sys_clk"
-   end="Core1_TX.clk" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="system_PLL.sys_clk"
-   end="us_counter.clk" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="system_PLL.sys_clk"
+   start="clk_0.clk"
    end="Core2_JTAG_UART.clk" />
  <connection
    kind="clock"
    version="18.1"
-   start="system_PLL.sys_clk"
+   start="clk_0.clk"
    end="Core1_JTAG_UART.clk" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="system_PLL.sys_clk"
-   end="Pushbuttons.clk" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="system_PLL.sys_clk"
-   end="Slider_switches.clk" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="system_PLL.sys_clk"
-   end="Core2_RX.clk" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="system_PLL.sys_clk"
-   end="Core1_RX.clk" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="system_PLL.sys_clk"
-   end="Core2_TX.clk" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="system_PLL.sys_clk"
-   end="Core1_RAM.clk1" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="system_PLL.sys_clk"
-   end="Core2_RAM.clk1" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="us_counter.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="Core1_RAM.clk1" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="Core2_RAM.clk1" />
  <connection
    kind="conduit"
    version="18.1"
@@ -1320,118 +1249,109 @@
  <connection
    kind="reset"
    version="18.1"
-   start="Nios2_Core1.debug_reset_request"
-   end="Nios2_Core1.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="Nios2_Core2.debug_reset_request"
-   end="Nios2_Core2.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="Nios2_Core1.debug_reset_request"
-   end="Core1_TX.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="Nios2_Core2.debug_reset_request"
-   end="Core2_TX.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="Nios2_Core2.debug_reset_request"
-   end="Core2_RX.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="Nios2_Core1.debug_reset_request"
-   end="Core1_RX.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="Nios2_Core1.debug_reset_request"
-   end="Core1_RAM.reset1" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="Nios2_Core2.debug_reset_request"
-   end="Core2_RAM.reset1" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="system_PLL.reset_source"
-   end="Nios2_Core1.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="system_PLL.reset_source"
-   end="Nios2_Core2.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="system_PLL.reset_source"
-   end="SDRAM_shared.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="system_PLL.reset_source"
-   end="mutex.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="system_PLL.reset_source"
-   end="Core1_TX.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="system_PLL.reset_source"
-   end="Core2_TX.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="system_PLL.reset_source"
+   start="clk_0.clk_reset"
    end="us_counter.reset" />
  <connection
    kind="reset"
    version="18.1"
-   start="system_PLL.reset_source"
+   start="clk_0.clk_reset"
    end="Core2_JTAG_UART.reset" />
  <connection
    kind="reset"
    version="18.1"
-   start="system_PLL.reset_source"
+   start="clk_0.clk_reset"
    end="Core1_JTAG_UART.reset" />
  <connection
    kind="reset"
    version="18.1"
-   start="system_PLL.reset_source"
+   start="clk_0.clk_reset"
    end="Pushbuttons.reset" />
  <connection
    kind="reset"
    version="18.1"
-   start="system_PLL.reset_source"
+   start="clk_0.clk_reset"
    end="Slider_switches.reset" />
  <connection
    kind="reset"
    version="18.1"
-   start="system_PLL.reset_source"
+   start="clk_0.clk_reset"
    end="Core2_RX.reset" />
  <connection
    kind="reset"
    version="18.1"
-   start="system_PLL.reset_source"
+   start="clk_0.clk_reset"
    end="Core1_RX.reset" />
  <connection
    kind="reset"
    version="18.1"
-   start="system_PLL.reset_source"
+   start="clk_0.clk_reset"
+   end="Core2_TX.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="Core1_TX.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="mutex.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="Nios2_Core2.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="SDRAM_shared.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="Nios2_Core1.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="Core2_RAM.reset1" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
    end="Core1_RAM.reset1" />
  <connection
    kind="reset"
    version="18.1"
-   start="system_PLL.reset_source"
-   end="Core2_RAM.reset1" />
+   start="Nios2_Core1.debug_reset_request"
+   end="Nios2_Core1.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="Nios2_Core1.debug_reset_request"
+   end="Core1_TX.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="Nios2_Core1.debug_reset_request"
+   end="Core1_RX.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="Nios2_Core2.debug_reset_request"
+   end="Nios2_Core2.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="Nios2_Core1.debug_reset_request"
+   end="Nios2_Core2.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="Nios2_Core2.debug_reset_request"
+   end="Nios2_Core1.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="Nios2_Core1.debug_reset_request"
+   end="Core1_RAM.reset1" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />

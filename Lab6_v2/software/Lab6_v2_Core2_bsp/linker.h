@@ -4,7 +4,7 @@
  * Machine generated for CPU 'Nios2_Core2' in SOPC Builder design 'Lab6_v2_NiosProc'
  * SOPC Builder design path: ../../Lab6_v2_NiosProc.sopcinfo
  *
- * Generated: Tue May 13 21:13:41 SGT 2025
+ * Generated: Sun May 18 16:28:14 SGT 2025
  */
 
 /*

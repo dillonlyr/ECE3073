@@ -123,8 +123,15 @@ asm ( "addi sp, sp, 128" );
 asm ( "eret" );
 }
 
+//void the_exception(void)
+//{
+//	alt_putstr("Entered");
+//}
+
 void interrupt_handler(void)
 {
+
+	alt_putstr("Core2 ISR triggered\n");
 
 	//int ipending; declare a variable like this to store the ipending register value to a local variable for comparision purpose - i have already declared below
 	int ipending;
@@ -132,10 +139,10 @@ void interrupt_handler(void)
 	NIOS2_READ_IPENDING(ipending); // read from ipending register (ctl4)
 	*core2_rx_edge = 0xFFFFFFFF;
 
-	if (ipending & 0x01)
-	{
-
-	}
+//	if (ipending & 0x01)
+//	{
+//
+//	}
 
 	if (ipending & 0x04)
 	{
