@@ -130,11 +130,11 @@ int main()
   core2_ready = 0;
 
 //   Enable IRQ from PIO
-//  * core1_rx_edge = 0x1;
-//  * core1_rx_irq = 0x1;
-//  * core1_rx_edge = 0x1;
-//  NIOS2_WRITE_STATUS(0x1);	// Enable global interrupts
-//  NIOS2_WRITE_IENABLE(0x2);	// Set IRQ bit
+  * core1_rx_edge = 0x1;
+  * core1_rx_irq = 0x1;
+  * core1_rx_edge = 0x1;
+  NIOS2_WRITE_STATUS(0x1);	// Enable global interrupts
+  NIOS2_WRITE_IENABLE(0x2);	// Set IRQ bit
 
 
   // mutex
@@ -167,8 +167,8 @@ int main()
 
   // Create random matrix A (N x N)
   matrix_rng(N, A);
-//  alt_putstr("\nA:\n");
-//  print_matrix_w_addresses(N, A);
+  alt_putstr("\nA:\n");
+  print_matrix_w_addresses(N, A);
 
   // add delay between N ready and matrix_A ready
   int checkpoint = * us_counter;
@@ -206,8 +206,8 @@ int main()
   printf("\nDual core Elapsed time: %u us\n", elapsed_cycles);
 
 //   print matrix C
-//  printf("\nC :\n");
-//  print_matrix_w_addresses(N, C);
+  printf("\nC :\n");
+  print_matrix_w_addresses(N, C);
 
   // single core test
   start_time = *us_counter;
