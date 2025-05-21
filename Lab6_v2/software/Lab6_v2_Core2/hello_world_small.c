@@ -147,6 +147,7 @@ int main()
 	  while (1);  // Halt here if mutex can't be opened
   }
   alt_putstr("Mutex opened\n");
+//  altera_avalon_mutex_unlock(mutex);
 
   // Stage 1, generate matrix B
   while (1) {
@@ -167,8 +168,8 @@ int main()
   volatile int *B = UNCACHE(MATRIX_B_ADDR);
   volatile int *C = UNCACHE(MATRIX_C_ADDR);
   matrix_rng(N, B);
-//  printf("\nB :\n");
-//  print_matrix_w_addresses(N, B);
+  printf("\nB :\n");
+  print_matrix_w_addresses(N, B);
 
 
   // Stage 2, Multiply matrix A & B

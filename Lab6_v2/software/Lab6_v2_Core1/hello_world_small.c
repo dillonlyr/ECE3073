@@ -143,6 +143,7 @@ int main()
 	  printf("Failed to open mutex!\n");
 	  while (1);  // Halt here if mutex can't be opened
   }
+//  altera_avalon_mutex_unlock(mutex);
   alt_putstr("Mutex opened\n");
 
   // wait for core 2 to start
@@ -167,8 +168,8 @@ int main()
 
   // Create random matrix A (N x N)
   matrix_rng(N, A);
-//  alt_putstr("\nA:\n");
-//  print_matrix_w_addresses(N, A);
+  alt_putstr("\nA:\n");
+  print_matrix_w_addresses(N, A);
 
   // add delay between N ready and matrix_A ready
   int checkpoint = * us_counter;
@@ -206,8 +207,8 @@ int main()
   printf("\nDual core Elapsed time: %u us\n", elapsed_cycles);
 
 //   print matrix C
-//  printf("\nC :\n");
-//  print_matrix_w_addresses(N, C);
+  printf("\nC :\n");
+  print_matrix_w_addresses(N, C);
 
   // single core test
   start_time = *us_counter;
