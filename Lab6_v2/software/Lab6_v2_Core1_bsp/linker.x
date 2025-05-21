@@ -4,7 +4,11 @@
  * Machine generated for CPU 'Nios2_Core1' in SOPC Builder design 'Lab6_v2_NiosProc'
  * SOPC Builder design path: ../../Lab6_v2_NiosProc.sopcinfo
  *
+<<<<<<< HEAD
  * Generated: Thu May 15 14:56:37 SGT 2025
+=======
+ * Generated: Sun May 18 21:44:57 SGT 2025
+>>>>>>> a912d808b13f941d5065f4fc6f67c213a7f39d38
  */
 
 /*
@@ -81,6 +85,7 @@ SECTIONS
      * Output sections associated with reset and exceptions (they have to be first)
      */
 
+<<<<<<< HEAD
 	.reset :
 	{
 	    KEEP(*(.reset))
@@ -90,6 +95,17 @@ SECTIONS
 	{
 	    KEEP(*(.entry))
 	} > Core1_RAM AT > Core1_RAMreset
+=======
+    .entry :
+    {
+        KEEP (*(.entry))
+    } > reset
+
+    .reset :
+    {
+        KEEP (*(.reset))
+    } > Core1_RAM
+>>>>>>> a912d808b13f941d5065f4fc6f67c213a7f39d38
 
     /*
      *

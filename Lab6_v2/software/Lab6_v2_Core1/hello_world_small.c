@@ -130,11 +130,11 @@ int main()
   core2_ready = 0;
 
 //   Enable IRQ from PIO
-//  * core1_rx_edge = 0x1;
-//  * core1_rx_irq = 0x1;
-//  * core1_rx_edge = 0x1;
-//  NIOS2_WRITE_STATUS(0x1);	// Enable global interrupts
-//  NIOS2_WRITE_IENABLE(0x2);	// Set IRQ bit
+  * core1_rx_edge = 0x1;
+  * core1_rx_irq = 0x1;
+  * core1_rx_edge = 0x1;
+  NIOS2_WRITE_STATUS(0x1);	// Enable global interrupts
+  NIOS2_WRITE_IENABLE(0x2);	// Set IRQ bit
 
 
   // mutex
